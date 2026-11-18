@@ -1,0 +1,53 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261113072732
+Username: AzureAD\RamuPodamekala
+RunAs User: AzureAD\RamuPodamekala
+Configuration Name: 
+Machine: TPX-BLR-RLT-416 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 21476
+PSVersion: 5.1.22621.6133
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.6133
+BuildVersion: 10.0.22621.6133
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is Saturn_nmap.txt
+PS C:\Users\RamuPodamekala> nmap saturn.hom.transactis.fr
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-11-13 07:28 India Standard Time
+Nmap scan report for saturn.hom.transactis.fr (150.171.110.83)
+Host is up (0.040s latency).
+Not shown: 995 filtered tcp ports (no-response)
+PORT     STATE  SERVICE
+80/tcp   open   http
+113/tcp  closed ident
+443/tcp  open   https
+2000/tcp open   cisco-sccp
+5060/tcp open   sip
+
+Nmap done: 1 IP address (1 host up) scanned in 12.17 seconds
+PS C:\Users\RamuPodamekala> nmap --script ssl* 150.171.110.83
+|       TLS_AKE_WITH_AES_256_GCM_SHA384 (secp256r1) - A
+|       TLS_AKE_WITH_AES_128_GCM_SHA256 (secp256r1) - A
+|     cipher preference: server
+|_  least strength: A
+2000/tcp open   cisco-sccp
+5060/tcp open   sip
+
+Nmap done: 1 IP address (1 host up) scanned in 40.85 seconds
+PS C:\Users\RamuPodamekala> nmap --script ssl* gateway.saturn.hml.transactis.fr
+
+Nmap done: 1 IP address (1 host up) scanned in 41.72 seconds
+PS C:\Users\RamuPodamekala> nmap --script vuln 150.171.110.83
+
+PS C:\Users\RamuPodamekala> nmap --script vuln gateway.saturn.hml.transactis.fr
+
+PS C:\Users\RamuPodamekala> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20261113164928
+**********************
